@@ -19,7 +19,7 @@ public class SumLists {
         LinkedList<Integer> result = new LinkedList<>();
         int carry = 0;
         Node<Integer> temp1 = l1.head, temp2 = l2.head;
-        while (temp1!=null && temp2!=null) {
+        while (temp1!=null || temp2!=null) {
             int sum = (temp1==null?0:temp1.data) + (temp2==null?0:temp2.data) + carry;
             carry = sum/10;
             sum%=10;
