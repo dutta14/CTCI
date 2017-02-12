@@ -24,12 +24,12 @@ public class LinkedList<T> {
     Node<T> tail;
     int length;
 
-    LinkedList() {
+    public LinkedList() {
         head = tail = null;
         length = 0;
     }
 
-    void add(T data) {
+    public void add(T data) {
         Node temp = new Node(data);
         if(head == null)
             head = tail = temp;
@@ -74,5 +74,24 @@ public class LinkedList<T> {
         }
         sb.append("]");
         return sb.toString();
+    }
+
+    public T poll() {
+        T data = tail.data;
+        Node temp = head;
+        while(temp.next != tail) {
+            temp = temp.next;
+        }
+        tail = temp;
+        return data;
+
+    }
+
+    public T peek() {
+        return tail.data;
+    }
+
+    public boolean isEmpty() {
+        return length==0;
     }
 }
