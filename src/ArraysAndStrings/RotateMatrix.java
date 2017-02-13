@@ -32,6 +32,16 @@ public class RotateMatrix {
         }
     }
 
+    private int[][] transpose(int[][] matrix) {
+        int m = matrix.length, n = matrix[0].length;
+        int[][] txp = new int[n][m];
+        for(int i=0; i<m; i++)
+            for(int j=0; j<n; j++)
+                txp[i][j] = matrix[j][i];
+
+        return txp;
+    }
+
     private void rotate() {
         swapRows();
         transpose();
